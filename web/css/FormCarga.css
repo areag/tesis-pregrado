@@ -34,15 +34,39 @@ label.radio{
     FONT-FAMILY: Verdana, Tahoma
 }
 
-h3 { 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: #c9d0d4; 
-    font-family: Helvetica Neue , sans-serif; 
-    font-size: 26px; 
+    font-family: Helvetica Neue , sans-serif;    
     font-weight: 100; 
     line-height: 5px; 
     letter-spacing: 1px; 
-    padding: 0px; 
+    padding: 0px;
 }
+
+h1 {
+    font-size: 40px;
+   
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 26px;
+}
+
+h4 {
+    font-size: 18px;
+    color: #333;
+}
+
+
 
 .BotonNormal
 {   

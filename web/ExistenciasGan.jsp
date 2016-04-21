@@ -4,6 +4,8 @@
     Author     : Guille
 --%>
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="com.SQL"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,13 +19,23 @@
         <script type="text/javascript" src="js_FunGenericas.js"></script>
         <script type="text/javascript" src="js/js_existenciasgan.js"></script>
         
+        <%
+                            SQL sql = new SQL();
+                            sql.conexion("root", "root");
+                            ResultSet rs = sql.consultar("SELECT * FROM existenciasgan order by fecha asc; ");
+                            if(rs.next() ) {
+                                rs.last();
+                            }                        
+                            String fecha_ant = rs.getString("fecha");
+                            
+                            %>
+        
         <title>Existencias Ganaderia</title>
     </head>
     <body>
         <div class="form">
-              <h3>
-               Existencias Ganaderas
-            </h3>
+            
+            <h3> Existencias Ganaderas  <h4> Ultima Existencia cargada: <%=fecha_ant%> </h4> </h3>
             
             <form method="post" id="existenciasgan" name="existenciasgan" action="ResulExistenciasGan.jsp"  class="formularios" target="central"> <br>
                 
@@ -77,7 +89,7 @@
             </form>
             
             <input type="reset" name="boton" value="Registro Existencias" onmouseover="this.style.color = 'green'"   
-                   onMouseOut="this.style.color = 'black'" class="BotonLargo" onclick="window.open('', 'central')"><br>
+                   onMouseOut="this.style.color = 'black'" class="BotonLargo" onclick="window.open('ResulExistenciasGan.jsp', 'central')"><br>
         
             
             
