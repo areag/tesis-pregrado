@@ -129,7 +129,7 @@ public class ExistenciasGan {
                 + "peso_novillo,"
                 + "muerte_ternero,"
                 + "muerte_novillo)"
-                + "VALUES('" 
+                + "VALUES('"
                 + EG.getFecha() + "','"
                 + EG.getPorcentaje() + "','"
                 + EG.getPrecio_ternero() + "','"
@@ -142,6 +142,22 @@ public class ExistenciasGan {
                 + EG.getMuerte_novillo() + "')");
 
         return resul;
+    }
+
+    public boolean editarExistGan(ExistenciasGan EG) {
+        SQL r = new SQL();
+        boolean resul = r.ejecutarSql("UPDATE existenciasgan SET"
+                + "fecha=\"" + EG.getFecha() + "\","
+                + "porcentaje=\"" + EG.getPorcentaje() + "\","
+                + "precio_ternero=\"" + EG.getPrecio_ternero() + "\","
+                + "precio_novillo=\"" + EG.getPrecio_novillo() + "\","
+                + "incremento=\"" + EG.getIncremento() + "\","
+                + "disminucion=\"" + EG.getDisminucion() + "\","
+                + "peso_ternero=\"" + EG.getPeso_ternero() + "\","
+                + "peso_novillo=\"" + EG.getPeso_novillo() + "\","
+                + "muerte_ternero=\"" + EG.getMuerte_ternero() + "\","
+                + "muerte_novillo=\"" + EG.getMuerte_novillo() + "\"");
+  return resul;
     }
 
 }

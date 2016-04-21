@@ -16,6 +16,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/tablas.css">
         <script type="text/javascript" src="js_FunGenericas.js"></script>
+        <script type="text/javascript" src="js/js_existenciasgan.js"></script>
         
         <title>Resultado Existencias Ganaderia</title>
 
@@ -127,7 +128,7 @@
                                 out.print("<td>" + rs.getDouble("precio_novillo") + "</td>");
                                 out.print("<td>" + rs.getDouble("incremento") + "</td>");
                                 out.print("<td>" + rs.getDouble("disminucion") + "</td>");
-                                out.print("<td>" + rs.getDouble("peso_novillo") + "</td>");
+                                out.print("<td>" + rs.getDouble("peso_ternero") + "</td>");
                                 out.print("<td>" + rs.getDouble("peso_novillo") + "</td>");
                                 out.print("<td>" + rs.getDouble("muerte_ternero") + "</td>");
                                 out.print("<td>" + rs.getDouble("muerte_novillo") + "</td>");
@@ -140,7 +141,7 @@
                 </table>
             </div>
 
-            <form name="formEdicion2" action="EditarGastosGanaderia.jsp" method="post" onsubmit="capturarEnvio()" onreset="anular()">
+            <form name="formEdicion2" action="EditarExistenciasGan.jsp" method="post" onsubmit="capturarEnvio()" onreset="anular()">
                 <div id="contenedorForm" class="container">
 
                 </div>
