@@ -31,32 +31,43 @@
                 <span class="red">*</span>
                 <input type="text" name="fecha" id="fecha" readonly="readonly" /><br /><br /> 
                 
-                <label for="porcentaje" class="Texto"> Porcentaje de ventas: % </label>            
+                <label for="porcentaje" class="Texto"> Porcentaje de ventas: % </label>
+                <span class="red">*</span>
                 <input id="porcentaje" name="porcentaje" maxlength="3" class="ComboMedio" onKeyPress="return soloNumeros(event)"  /><br /><br />
                 
-                 <label for="precio_ternero" class="Texto"> Precio de Plaza al Cierre Terneros:</label>            
+                 <label for="precio_ternero" class="Texto"> Precio de Plaza al Cierre Terneros:</label>  
+                 <span class="red">*</span>
                 <input id="precio_ternero" name="precio_ternero" maxlength="5" class="ComboMedio" onKeyPress="return soloNumeros(event)" /><br /><br />
                 
-                 <label for="precio_novillo" class="Texto"> Precio de Plaza al Cierre Novillos:</label>            
+                 <label for="precio_novillo" class="Texto"> Precio de Plaza al Cierre Novillos:</label>  
+                 <span class="red">*</span>
                 <input id="precio_novillo" name="precio_novillo" maxlength="5" class="ComboMedio" onKeyPress="return soloNumeros(event)"  /><br /><br />
                 
-                 <label for="incremento" class="Texto"> Incrementos por cambio de categoria:</label>            
+                 <label for="incremento" class="Texto"> Incrementos por cambio de categoria:</label>  
+                 <span class="red">*</span>
                 <input id="incremento" name="incremento" maxlength="5" class="ComboMedio" onKeyPress="return soloNumeros(event)"  /><br /><br />
                 
-                 <label for="disminucion" class="Texto"> Disminuciones por cambio de categoria:</label>            
+                 <label for="disminucion" class="Texto"> Disminuciones por cambio de categoria:</label>
+                 <span class="red">*</span>
                 <input id="disminucion" name="disminucion" maxlength="5" class="ComboMedio" onKeyPress="return soloNumeros(event)"  /><br /><br />
                 
-                 <label for="peso_ternero" class="Texto"> Peso Promedio Ternero:</label>            
+                 <label for="peso_ternero" class="Texto"> Peso Promedio Ternero:</label>     
+                 <span class="red">*</span>
                 <input id="peso_ternero" name="peso_ternero" maxlength="5" class="ComboMedio" onKeyPress="return soloNumeros(event)" /><br /><br />
                 
-                 <label for="peso_novillo" class="Texto"> Peso Promedio Novillo:</label>            
+                 <label for="peso_novillo" class="Texto"> Peso Promedio Novillo:</label>   
+                 <span class="red">*</span>
                 <input id="peso_novillo" name="peso_novillo" maxlength="5" class="ComboMedio" onKeyPress="return soloNumeros(event)" /><br /><br />
                 
                  <label for="muerte_ternero" class="Texto"> Muerte Terneros:</label>            
+                 <span class="red">*</span>
                 <input id="muerte_ternero" name="muerte_ternero" maxlength="5" class="ComboMedio" onKeyPress="return soloNumeros(event)" /><br /><br />
                 
-                 <label for="muerte_novillo" class="Texto"> Muerte Novillos:</label>            
+                 <label for="muerte_novillo" class="Texto"> Muerte Novillos:</label>  
+                 <span class="red">*</span>
                 <input id="muerte_novillo" name="muerte_novillo" maxlength="5" class="ComboMedio" onKeyPress="return soloNumeros(event)" /><br /><br />
+                
+                <span class="red">* Campos obligatorios</span><br /><br />
                 
                 <input type="hidden" name="select">
                 <input type="reset" name="Guardar" value="Guardar" onmouseover="this.style.color = 'green'"   
