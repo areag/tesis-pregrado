@@ -1,0 +1,500 @@
+/* Reset Styles
+--------------------------------------------- */
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+::-webkit-scrollbar
+{
+    width: 12px;  /* for vertical scrollbars */
+    height: 12px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* General Styles
+--------------------------------------------- */
+
+body {
+    
+    height: auto;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+/* responsive iframe..pruebas
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+.embed-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+*/
+
+/* Helper Classes
+--------------------------------------------- */
+
+.clearfix {
+    display: block;
+    clear: both;
+}
+
+
+/* Typography
+--------------------------------------------- */
+
+body {
+
+    font-size:18px;
+    line-height: 32px;
+    color: #333;
+    word-wrap:break-word !important;
+    font-family: 'Open Sans', sans-serif;
+}
+
+p {
+    margin: 0 0 24px;
+    margin: 0 0 2.4rem;
+    padding: 0;
+}
+
+
+/* Links
+--------------------------------------------- */
+
+a {
+    text-decoration: none;
+    color: #FF5722
+}
+
+a:hover {
+    text-decoration: underline; 
+    color: #E64A19;
+}
+
+
+
+/* Headings
+--------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 10px;
+    color: #333;
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 16px;
+}
+
+h1 {
+    font-size: 40px;
+    font-family:Georgia; 
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+
+
+/* Sections
+--------------------------------------------- */
+
+#container{
+
+
+margin: auto;
+    width: 90%;
+}
+
+
+
+/* Header
+--------------------------------------------- */
+
+#head1 {
+
+    width: 100%;
+    height: 31%;
+    background-color: #f7f7f7;
+    position: relative;
+
+}
+
+#head2{
+    position: absolute;
+  
+    width: 80%;
+    height: 98%;
+   
+
+}
+#head2 img{
+   width: 100%;
+   height: 100%;
+}
+
+
+#head3 {
+    
+    position: absolute;
+    width: 40%;
+    height: 73%;
+    right: 0;
+    top: 25%;
+    overflow: hidden;
+}
+
+#head3 #title{
+    font-size: larger;
+    overflow: hidden;
+}
+
+nav {
+
+    overflow: hidden;
+    height: auto;
+    max-width: 100%;
+    background-color: #1de341;
+
+}
+
+nav .iframedefecto{ 
+
+    text-align: left;
+    height: 5%;
+    width: 60%;   
+    float: right;
+
+}
+
+nav .iframelogin{   
+
+    height: 5%;
+    width: 39%;
+    float: left;
+
+}
+
+#menudefecto{
+    width: 100%;
+
+}
+
+#loginresult{
+
+    font-size: 5px;
+    margin: 0px 0px 0px 10px;
+    padding: 0px;
+    float: left;
+}
+
+#lista ul li{
+
+    display: inline-block;
+    padding: 0px 15px 15px 10px ;
+    text-decoration: none;
+    color: black;
+    font-size: 1.1em;
+    font-family: Georgia;
+    float: left;
+}
+#lista ul li:hover{
+    color: #000000;
+    text-decoration: none;
+}
+
+
+
+/* Content
+--------------------------------------------- */
+
+#content {
+
+    margin: 0px;
+    padding: 0px;
+    float: right;	
+    width: 79%;
+    overflow:hidden;
+
+}
+#central { 
+    margin: 0px;
+    width: 99%;
+
+}
+
+
+/* Sidebar
+--------------------------------------------- */
+
+aside {  
+
+    overflow:hidden;
+    float: left;   
+    max-width: 20%;
+    background-color: #1de341;
+}
+
+/* Footer
+--------------------------------------------- */
+
+footer{
+    max-width: 98%;
+    padding: 1%;
+    background-color: #1de341;
+    border-top: 5px solid #17b634;
+    color: #fff;
+    text-align: center;
+    display: none;
+}
+
+
+
+.Textologin
+{
+
+    font-family: Georgia;
+    color: #ffffff;
+    font-size: 1em;
+
+}
+
+
+
+.login{
+    height: 30%;
+    max-width: 99%;
+
+
+}
+.login1{
+    padding: 5px 2px 5px 15px;
+}
+
+.login1 label{
+    display: block;
+    margin: 0px; 
+    padding: 0px;
+    color: #ffffff;
+    font-size: 1em;
+
+
+}
+
+
+.ComboLogin
+{
+    background: url(search-white.png) no-repeat 10px 6px #fcfcfc;
+    border: 1px solid #d1d1d1;
+    font: bold 12px Arial,Helvetica,Sans-serif;
+    color: black;
+    width: 150px;
+    padding: 6px 15px 6px 15px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+
+
+}
+
+.BotonLogin
+{   
+    border: 1px solid #d1d1d1;
+    border-radius: 12px;
+    background-color: url(search-white.png) no-repeat 10px 6px #fcfcfc;
+    padding: 5px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font: bold 12px Arial,Helvetica,Sans-serif;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+
+.BotonLogin:hover {
+    background-color: white;
+    color: black;
+
+}
+.BotonNormal
+{   
+    border-right: 0px;
+    border-top: 0px;
+    font-weight: 500;
+    font-size: 10px;
+    background: beige;
+    border-left: 0px;   
+    cursor: pointer;
+    color: #222222;
+    text-indent: 0pt;
+    border-bottom: 0px;
+    font-family: Verdana, Tahoma;
+    letter-spacing: normal;
+    height: 21px;
+    text-align: center;
+    text-decoration: none;
+
+}
+
+
+.opciones h4{
+    margin: 10px;
+    font-family: Verdana, Tahoma;    
+}
+
+.opciones select{
+    font-family:  Verdana, Tahoma;
+    width: 350px;    
+    margin-bottom: 5px;
+    text-align: left;
+    padding-left: 20px;
+    float: left; 
+    margin-left:  100px;
+}
+
+.opciones input {
+
+    float: left;
+    margin-left: 5px;
+}
+
+.formularios label
+{
+    display: block; 
+    width: 175px; 
+    float: left; 
+    margin-bottom: 5px;
+    text-align: left;
+    padding-left: 20px
+}     
+.formularios input {
+    display: block; width: 150px; float: left; margin-bottom: 5px;
+}     
+
+br {
+    clear: both;
+}
+
+
+/* Media Queries
+--------------------------------------------- */
+
+@media all and (max-width : 768px) {
+
+    container{
+        font-size: small;
+    }
+    header {
+        text-align: center;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    #content {
+        width: 94%;
+        padding: 3%;	
+    }
+
+    #sidebar {
+        width: 94%;
+        padding: 3%;
+        border-top: 3px solid #E64A19;
+    }
+
+}
+
+@media all and (max-width : 330px) {
+
+    nav ul li {
+        display:block;
+        width: 94%;
+    }
+
+}
