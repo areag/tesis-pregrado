@@ -7,7 +7,6 @@
 
 function verificarVacios() {
 
-    var hayError = false;
     var fecha_desde = document.getElementById("fecha_desde").value;
     var dia_desde = fecha_desde.substr(0 , 2);
     var mes_desde = fecha_desde.substr(3 , 2);

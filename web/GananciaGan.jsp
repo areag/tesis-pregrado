@@ -29,17 +29,17 @@
 
                 <label for="fecha" class="Texto"> Fecha Desde: </label>
                 <span class="red">*</span>
-                <input type="text" name="fecha" id="fecha_desde" class="fecha_gan" readonly="readonly" /><br /><br />
+                <input type="text" name="fecha_desde" id="fecha_desde" class="fecha_gan" readonly="readonly" /><br /><br />
                 
                 <label for="fecha" class="Texto"> Fecha Hasta: </label>
                 <span class="red">*</span>
-                <input type="text" name="fecha" id="fecha_hasta" class="fecha_gan" readonly="readonly" /><br /><br />
+                <input type="text" name="fecha_hasta" id="fecha_hasta" class="fecha_gan" readonly="readonly" /><br /><br />
             
                 <span class="red">* Campos obligatorios</span><br /><br />
 
                 <input type="hidden" name="variableDesvio">
 
-                <input type="reset" name="boton" value="Generar Ganancia" onmouseover="this.style.color = 'green'"   
+                <input type="button" name="boton" value="Generar Ganancia" onmouseover="this.style.color = 'green'"   
                        onMouseOut="this.style.color = 'black'" class="BotonLargo" onclick="verificarVacios()"/><br>
                 <input type="button" name="Volver" value="Volver" onmouseover="this.style.color = 'green'"
                        onmouseout="this.style.color = 'black'" class="BotonLargo" onclick="volver()"/><br /><br />
