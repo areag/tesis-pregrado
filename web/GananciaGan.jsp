@@ -25,7 +25,7 @@
 
             <h3>Generar Ganancia entre Fechas</h3>
 
-            <form name="miformGan" method="post" action="" target="central" > <br>
+            <form name="miformGan" method="post" action="ResulGananciasGan.jsp" target="central" > <br>
 
                 <label for="fecha" class="Texto"> Fecha Desde: </label>
                 <span class="red">*</span>
@@ -34,15 +34,12 @@
                 <label for="fecha" class="Texto"> Fecha Hasta: </label>
                 <span class="red">*</span>
                 <input type="text" name="fecha" id="fecha_hasta" class="fecha_gan" readonly="readonly" /><br /><br />
-
-             
-                
-
+            
                 <span class="red">* Campos obligatorios</span><br /><br />
 
                 <input type="hidden" name="variableDesvio">
 
-                <input type="button" name="boton" value="Generar Ganancia" onmouseover="this.style.color = 'green'"   
+                <input type="reset" name="boton" value="Generar Ganancia" onmouseover="this.style.color = 'green'"   
                        onMouseOut="this.style.color = 'black'" class="BotonLargo" onclick="verificarVacios()"/><br>
                 <input type="button" name="Volver" value="Volver" onmouseover="this.style.color = 'green'"
                        onmouseout="this.style.color = 'black'" class="BotonLargo" onclick="volver()"/><br /><br />
