@@ -60,7 +60,7 @@ function transformarEnEditable(nodo) {
 
 
 
-        var nuevoCodigoHtml = '<td><input type="text" name="idg" id="idg" value="' + idexistenciasgan + '" readonly /></td>'
+        var nuevoCodigoHtml = '<td><input type="text" name="idexistenciasgan" id="idexistenciasgan" value="' + idexistenciasgan + '" readonly /></td>'
                 + '<td><input type="text" name="fecha" id="fecha" value= "' + fecha + '" /></td>'
                 + '<td><input type="text" name="porcentaje" id="porcentaje" value= "' + porcentaje + '" /></td>'
                 + '<td><input type="text" name="precio_ternero" id="precio_ternero" value= "' + precio_ternero + '" /></td>'
@@ -101,6 +101,8 @@ function capturarEnvio() {
         var peso_novillo = document.getElementById('peso_novillo').value;
         var muerte_ternero = document.getElementById('muerte_ternero').value;
         var muerte_novillo = document.getElementById('muerte_novillo').value;
+        
+        
  
     nodoContenedorForm.innerHTML = '<label class="etiquetaLargaTabla">Por favor espere.....</label><br>' +
             '<input type="hidden" id="idexistenciasgan" name="idexistenciasgan" value="' + idexistenciasgan + '">' +
@@ -115,7 +117,9 @@ function capturarEnvio() {
             '<input type="hidden" id="muerte_ternero" name="muerte_ternero" value="' + muerte_ternero + '">' +
             '<input type="hidden" id="muerte_novillo" name="muerte_novillo" value="' + muerte_novillo + '">' +
             '<input type="hidden" id="desvio" name="desvio" value="editar">';
-
+    
+   
+ 
     document.forms.formEdicion2.submit();
 
 }

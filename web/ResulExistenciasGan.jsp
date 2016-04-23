@@ -142,6 +142,7 @@
             </div>
 
             <form name="formEdicion2" action="EditarExistenciasGan.jsp" method="post" onsubmit="capturarEnvio()" onreset="anular()">
+                
                 <div id="contenedorForm" class="container">
 
                 </div>
