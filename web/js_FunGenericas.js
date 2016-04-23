@@ -45,7 +45,9 @@ $(document).ready(function () {
     $("#fecha").datepicker({showAnim: 'fadeIn'});
 });
 
-
+$(document).ready(function () {
+    $(".fecha_gan").datepicker({showAnim: 'fadeIn'});
+});
 
 
 
