@@ -25,14 +25,10 @@
 
             <form name="miformGan" method="post" action="" target="central" > <br>
 
-                <label for="fecha" class="Texto"> Fecha Desde: </label>
-                <span class="red">*</span>
-                <input type="text" class="fecha" id="date_1" /><br /><br />
 
 
-                <label for="fecha" class="Texto"> Fecha Hasta: </label>
-                <span class="red">*</span>
-                <input type="text" class="fecha" id="date_2" /><br /><br />
+             
+                
 
                 <span class="red">* Campos obligatorios</span><br /><br />
 
