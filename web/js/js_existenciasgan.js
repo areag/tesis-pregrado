@@ -126,14 +126,16 @@ function capturarEnvio() {
 
 function eliminar(nodo) {
 
-    if (confirm('¿Estas seguro de eliminar este gasto?')) {
+    if (confirm('¿Estas seguro de eliminar esta existencia?')) {
         var nodoTd = nodo.parentNode;
         var nodoTr = nodoTd.parentNode;
         var nodosEnTr = nodoTr.getElementsByTagName('td');
-        var idgasto = nodosEnTr [0].textContent;
+        var idexistenciasgan = nodosEnTr[0].textContent;
         var nodoContenedorForm = document.getElementById('contenedorForm');
-        nodoContenedorForm.innerHTML = '<input type="hidden" id="idg" name="idg" value="' + idgasto + '">' +
+        
+        nodoContenedorForm.innerHTML = '<input type="hidden" id="idexistenciasgan" name="idexistenciasgan" value="' + idexistenciasgan + '">' +
                 '<input type="hidden" id="desvio" name="desvio" value="eliminar">';
+        
         document.forms.formEdicion2.submit();
     }
 }

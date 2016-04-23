@@ -5,15 +5,17 @@
  */
 
 
-function resizeIframe(iframe) {    
+function resizeIframe(iframe) {
     var i = 200;
     iframe.height = iframe.contentWindow.document.body.scrollHeight + i + "px";
 }
 
 function cambia() {
-      
- window.frames.location[3].src="Buscar.jsp";
+
+    window.frames.location[3].src = "Buscar.jsp";
 }
+
+
 
 
 
@@ -40,10 +42,13 @@ jQuery(function ($) {
 });
 
 $(document).ready(function () {
-    $("#fecha").datepicker({
-        showAnim: 'fadeIn'
-    });
+    $("#fecha").datepicker({showAnim: 'fadeIn'});
 });
+
+
+
+
+
 
 function volver() {
     window.history.back();
@@ -55,7 +60,7 @@ function volverInicio() {
 }
 
 function abrepagina() {
-   
+
     var newjsp = document.form1.funciones.options[document.form1.funciones.selectedIndex].value;
     window.open(newjsp, 'central', ' ');
 }
@@ -63,7 +68,7 @@ function abrepagina() {
 
 function soloNumeros(e) //SOLO NUMEROS CON BACKSPACE...ANTES NO LA TENIA
 {
- 
+
     var key = window.Event ? e.which : e.keyCode
     return ((key >= 48 && key <= 57) || (key >= 8 && key <= 9) || (key == 46))
 }
