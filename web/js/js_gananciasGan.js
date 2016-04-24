@@ -21,19 +21,17 @@ function verificarVacios() {
         if (año_desde > año_hasta) {
             alert("La fecha de inicio no puede ser mayor que la final 1");
         } else if (año_desde < año_hasta) {
-            alert("funciona");
+            
             newwindow = window.open("ResulGananciasGan.jsp?&fecha_desde=" + fecha_desde + "&fecha_hasta=" + fecha_hasta, "central");
         } else if (año_desde == año_hasta) {
             if (mes_desde > mes_hasta) {
                 alert("La fecha de inicio no puede ser mayor que la final 2 ");
-            } else if (mes_desde < mes_hasta) {
-            alert("funciona");
+            } else if (mes_desde < mes_hasta) {          
             newwindow = window.open("ResulGananciasGan.jsp?&fecha_desde=" + fecha_desde + "&fecha_hasta=" + fecha_hasta, "central");
         } else if (mes_desde == mes_hasta) {
                 if (dia_desde > dia_hasta) {
                     alert("La fecha de inicio no puede ser mayor que la final 3");
-                } else if (dia_desde <= dia_hasta) {
-                    alert("funciona");
+                } else if (dia_desde <= dia_hasta) {                   
                     newwindow = window.open("ResulGananciasGan.jsp?&fecha_desde=" + fecha_desde + "&fecha_hasta=" + fecha_hasta, "central");
                 }
             }
