@@ -37,16 +37,17 @@
             
                 <span class="red">* Campos obligatorios</span><br /><br />
 
-                <input type="hidden" name="variableDesvio">
+                
 
                 <input type="reset" name="boton" value="Generar Ganancia" onmouseover="this.style.color = 'green'"   
                        onMouseOut="this.style.color = 'black'" class="BotonLargo" onclick="verificarVacios()"/><br>
+                
+            </form>
+            
+            <input type="reset" name="boton" value="Ver Ganancias Guardadas" onmouseover="this.style.color = 'green'"   
+                       onMouseOut="this.style.color = 'black'" class="BotonLargo" onclick="window.open('RegistroGananciasGan.jsp','central')"/><br>
                 <input type="button" name="Volver" value="Volver" onmouseover="this.style.color = 'green'"
                        onmouseout="this.style.color = 'black'" class="BotonLargo" onclick="volver()"/><br /><br />
-
-
-
-            </form>
 
         </div>
 

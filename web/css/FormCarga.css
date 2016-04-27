@@ -11,6 +11,7 @@ and open the template in the editor.
  .form label,input, select {
     
     display: block; width: 150px; float: left; margin-bottom: 5px;
+    
 }
 
 .form{

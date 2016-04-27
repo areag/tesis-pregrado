@@ -150,7 +150,7 @@
                             
                             SQL sql = new SQL();
                             sql.conexion("root", "root");
-                            ResultSet rs = sql.consultar("SELECT * FROM vgan order by numeroVenta; ");
+                            ResultSet rs = sql.consultar("SELECT * FROM vgan order by fecha desc; ");
                             while (rs.next()) {
                                 out.print("<tr>");
                                 out.print("<td>" + rs.getInt("numeroVenta") + "</td>");

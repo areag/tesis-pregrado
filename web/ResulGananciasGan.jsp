@@ -7,26 +7,37 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="com.SQL"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="beans.GananciasGan" %>
-<jsp:useBean id="gg" class="beans.GananciasGan" scope="session" />
+<%@ page import="beans.GananciasGan" %>
+<jsp:useBean id="ganancias" class="beans.GananciasGan" scope="session" />
+
 
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/tablas.css">
- 
+        <link href="css/FormCarga.css" rel="stylesheet"> 
+
         <script type="text/javascript" src="js/js_gananciasGan.js"></script>
         <script type="text/javascript" src="js_FunGenericas.js"></script>
 
 
 
-        <%
+        <%!
 
             String r1 = "";
             String r2 = "";
-            int size = 0;
-
+            boolean resultado;
+            double ingreso_bruto = 0;
+            double total_GCV = 0;
+            double ingreso_neto = 0;          
+            double total_GG = 0;          
+            double total_GCC = 0;
+            double gastos_GR = 0;
+            double ganancia = 0;
+            
+            %>
+        <%
             String fecha_desde = request.getParameter("fecha_desde");
             String dia_desde = fecha_desde.substring(0, 2);
             String mes_desde = fecha_desde.substring(3, 5);
@@ -47,61 +58,70 @@
     </head>
     <body>
         <div id="contenedor" class="container">
-
-
-
-            <div id="myTabDiv">
-
-                <h1>Ganancias Generadas entre el: <%=fecha_desde%> y el: <%=fecha_hasta%>  </h1>
-
-                <table>
-                    <thead>    
-                        <tr>
-
-                            <th>Fecha</th>                        
-                            <th>Valor</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <%
-                            
-                            SQL sql = new SQL();
-                            sql.conexion("root", "root");
-                            ResultSet rs = sql.consultar("SELECT fecha, valor FROM vgan WHERE fecha >= '" + fecha_desde + "' AND fecha <= '" + fecha_hasta + "' order by fecha desc");
-                            double acu = 0;
-                            int i = 0;
-                            
-                            while (rs.next()) {
-                                acu += rs.getDouble("valor");
-                                i++;             
-                                out.print("<tr>");
-                                out.print("<td>" + rs.getString("fecha") + "</td>");
-                                out.print("<td>" + rs.getDouble("valor") + "</td>");
-                                out.print("</tr>");
-                            }                           
-                            if (rs != null) {                            
-                                    rs.beforeFirst();
-                                    rs.last();
-                                    size = rs.getRow();                              
-                                if (size == 0) {
-                                    r1 = "alert('No existen Ventas para la seleccion realizada')";
-                                    r2 = "window.open('GananciaGan.jsp','central')";
-                                }
-                            }                            
-                        %>
-                    </tbody>
-                </table>
-            </div> <br/>
             
-                    <label name="ib" for="IB" class="Texto"> Ingreso Bruto: </label>
-                    <input type="text" name="ib" id="ib" class="ComboMedio" value="<%=acu%>" readonly="readonly"><br /><br />
-               
-            <input type="button" name="Volver" value="Volver" onmouseover="this.style.color = 'green'"
-                   onmouseout="this.style.color = 'black'" class="BotonTabla" onclick="volver()"/><br />
+           <h3>Ganancias Generadas desde: <%=fecha_desde%> hasta: <%=fecha_hasta%>  </h3>
+           
+                        <%
+                            try {
+                                ingreso_bruto = ganancias.ingreso_bruto(fecha_desde, fecha_hasta);
+                                total_GCV = ganancias.total_GCV(fecha_desde, fecha_hasta);
+                                ingreso_neto = ganancias.ingreso_neto();
+                                total_GG = ganancias.total_GG(fecha_desde, fecha_hasta);
+                                gastos_GR = ganancias.gastos_GR(fecha_desde, fecha_hasta);
+                                total_GCC = ganancias.total_GCC(fecha_desde, fecha_hasta);
+                                ganancia = ganancias.ganancia(); 
+                                
+                            } catch (Exception e) {                          
+                                out.print("Ocurrio una excepcion: " + e.getMessage()) ;
+                          }
 
-            <input type="button" value="Finalizar" onmouseover="this.style.color = 'green'"   
-                   onMouseOut="this.style.color = 'black'" class="BotonTabla"  onclick="volverInicio()" />
+                        %>
+      
+            <div class="form" style ="border-top : 2px solid #1de341;"> <br />
+                
+                <form id="nuevaGanancia" name="nuevaGanancia" method="post" action="RegistroGananciasGan.jsp" class="formularios" target="central">
+
+                <label for="ib" class="Texto"> Ingreso Bruto: </label>
+                <input type="text" name="ib" id="ib" class="ComboMedio" value="<%=ingreso_bruto%>" readonly="readonly"> <label for="ib" class="Texto">$</label> <br /><br />
+
+                <label for="total_GCV" class="Texto"> Total de Gastos de Comercialización Ventas: </label>
+                <input type="text" name="total_GCV" id="total_GCV" class="ComboMedio" value="<%=total_GCV%>" readonly="readonly"><label for="ib" class="Texto">$</label> <br /><br />
+
+                <label for="in" class="Texto"> Ingreso Neto: </label>
+                <input type="text" name="in" id="in" class="ComboMedio" value="<%=ingreso_neto%>" readonly="readonly"><label for="ib" class="Texto">$</label> <br /><br />
+
+                <label for="total_GG" class="Texto"> Total Gastos Ganadería: </label>
+                <input type="text" name="total_GG" id="total_GG" class="ComboMedio" value="<%=total_GG%>" readonly="readonly"><label for="ib" class="Texto">$</label> <br /><br />
+
+                <label for="gr" class="Texto"> Gastos Reposición: </label>
+                <input type="text" name="gr" id="gr" class="ComboMedio" value="<%=gastos_GR%>" readonly="readonly"><label for="ib" class="Texto">$</label> <br /><br />
+
+                <label for="total_GCC" class="Texto"> Total Gastos de Comercialización de Compra: </label>
+                <input type="text" name="total_GCC" id="total_GCC" class="ComboMedio" value="<%=total_GCC%>" readonly="readonly"><label for="ib" class="Texto">$</label> <br /><br />
+
+                <label for="ganancia" class="Texto"> Ganancia: </label>
+                <input type="text" name="ganancia" id="ganancia" class="ComboMedio" value="<%=ganancia%>" readonly="readonly"><label for="ib" class="Texto">$</label> <br /><br />
+
+                <input type="button" name="Guardar" value="Guardar" onmouseover="this.style.color = 'green'"
+                       onmouseout="this.style.color = 'black'" class="BotonTabla" onclick="cargarGanancia()"/><br />
+                
+                <input type="hidden" name="fecha_desde" value="<%=fecha_desde%>">
+                <input type="hidden" name="fecha_hasta" value="<%=fecha_hasta%>">
+                <input type="hidden" name="select" value="select">
+                
+                
+                </form>
+                
+                
+                
+                
+                <input type="button" name="Volver" value="Volver" onmouseover="this.style.color = 'green'"
+                       onmouseout="this.style.color = 'black'" class="BotonTabla" onclick="volver()"/><br />
+
+                <input type="button" value="Finalizar" onmouseover="this.style.color = 'green'"   
+                       onMouseOut="this.style.color = 'black'" class="BotonTabla"  onclick="volverInicio()" />
+            </div>
+
 
         </div>
 
