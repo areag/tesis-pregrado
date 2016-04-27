@@ -16,10 +16,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/tablas.css">
         <script type="text/javascript" src="js_FunGenericas.js"></script>
-         <script type="text/javascript" src="js/js_gananciasGan.js"></script>
+        <script type="text/javascript" src="js/js_gananciasGan.js"></script>
         <title>Registro Nuevas Ganancias</title>
-        
-                <%
+
+        <%
             String boton = request.getParameter("select");
             if ("select".equals(boton)) {
         %>
@@ -28,7 +28,7 @@
             boolean resultado;
             String r1 = "";
             String r2 = "";
-                                            %>
+                                                        %>
 
         <%
             GananciasGan gan = new GananciasGan();
@@ -57,10 +57,10 @@
 
 
     </head>
-       <%} else {
+    <%} else {
     %>
     <body>
-<div id="contenedor" class="container">
+        <div id="contenedor" class="container">
 
             <div id="myTabDiv">
 
@@ -91,7 +91,7 @@
                         <%
                             SQL sql = new SQL();
                             sql.conexion("root", "root");
-                            ResultSet rs = sql.consultar("SELECT * FROM gananciasgan order by idgananciasgan; ");
+                            ResultSet rs = sql.consultar("SELECT * FROM gananciasgan order by fecha_hasta desc; ");
                             while (rs.next()) {
                                 out.print("<tr>");
                                 out.print("<td>" + rs.getInt("idgananciasgan") + "</td>");
@@ -113,7 +113,12 @@
                 </table>
             </div>
 
-       
+
+            <form name="formEdicion2" action="EditGananciasGan.jsp" method="post" onreset="anular()">
+
+                <div id="contenedorForm" class="container">
+
+                </div>
 
             </form>
             <br>
@@ -124,5 +129,5 @@
 
         </div>
     </body>
-     <%}%>
+    <%}%>
 </html>

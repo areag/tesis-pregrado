@@ -67,4 +67,18 @@ function capturarEnvio(nodo) {
 
 }
 
+function eliminar(nodo) {
+
+    if (confirm('¿Estas seguro de eliminar esta Gananacia?')) {
+        var nodoTd = nodo.parentNode;
+        var nodoTr = nodoTd.parentNode;
+        var nodosEnTr = nodoTr.getElementsByTagName('td');
+        var idgananciasgan = nodosEnTr [0].textContent;
+        var nodoContenedorForm = document.getElementById('contenedorForm');
+        nodoContenedorForm.innerHTML = '<input type="hidden" id="idgananciasgan" name="idgananciasgan" value="' + idgananciasgan + '">' +
+                '<input type="hidden" id="desvio" name="desvio" value="eliminar">';
+        document.forms.formEdicion2.submit();
+    }
+}
+
 

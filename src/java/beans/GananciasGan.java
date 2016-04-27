@@ -189,5 +189,12 @@ public class GananciasGan {
         return result;
     }
     
+    public boolean eliminarGanancia(int idgananciasgan){
+        SQL r = new SQL();
+        boolean resul = r.ejecutarSql("DELETE FROM gananciasgan WHERE idgananciasgan = '" + idgananciasgan + "'");
+        return resul;
+        
+    }
+    
 
 }
