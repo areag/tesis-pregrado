@@ -1,0 +1,220 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 07/01/2016, 16:37:56
+    Author     : nulia
+*/
+
+ .form label,input, select {
+    
+    display: block; width: 150px; float: left; margin-bottom: 5px;
+    
+}
+
+.form{
+    
+     
+}
+
+
+.form label {
+    text-align: left; width: 175px; padding-left: 20px;
+}     
+br {
+    clear: left;
+}
+label.radio{
+    text-align: left;
+    width: 5px; 
+    padding: 0px 0px 0px 18px; 
+    FONT-SIZE: 11px;
+    color: navy;
+    FONT-FAMILY: Verdana, Tahoma
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #c9d0d4; 
+    font-family: Helvetica Neue , sans-serif;    
+    font-weight: 100; 
+    line-height: 5px; 
+    letter-spacing: 1px; 
+    padding: 0px;
+}
+
+h1 {
+    font-size: 40px;
+   
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 26px;
+}
+
+h4 {
+    font-size: 15px;
+    color: #333;
+}
+
+
+
+.BotonNormal
+{   
+    border-right:0px;
+    border-top: 0px;
+    font-weight: 500;
+    font-size: 10px;
+    background-color:  beige;    
+    border-left: 0px;
+    width: 73px;
+    cursor: pointer;
+    color: #222222;
+    text-indent: 0pt;
+    border-bottom: 0px;
+    font-family: Verdana, Tahoma;
+    letter-spacing: normal;
+    height: 21px;
+    text-align: center;
+    text-decoration: none;       
+}
+
+.BotonLargo
+{   
+    BORDER-RIGHT: 0px;
+    BORDER-TOP: 0px;
+    FONT-WEIGHT: 500;
+    FONT-SIZE: 10px;
+    background-color:  beige;    
+    BORDER-LEFT: 0px;
+    WIDTH: 170px;
+    CURSOR: pointer;
+    COLOR: #222222;
+    TEXT-INDENT: 0pt;
+    BORDER-BOTTOM: 0px;
+    FONT-FAMILY: Verdana, Tahoma;
+    LETTER-SPACING: normal;
+    HEIGHT: 21px;
+    TEXT-ALIGN: center;
+    TEXT-DECORATION: none;
+    margin-left:  150px;
+    alignment-adjust:central;
+
+}
+
+.ComboMedio
+{
+    PADDING-RIGHT: 2px;
+    PADDING-LEFT: 2px;
+    FONT-SIZE: 10px;
+    WIDTH: 165px;
+    COLOR: #5b5b5b;
+    FONT-FAMILY: Verdana, Tahoma;
+    HEIGHT:18px
+}
+.TextoGrande
+{
+    PADDING-RIGHT: 5px;
+    PADDING-LEFT: 5px;
+    FONT-SIZE: 20px;
+    color:  navy;
+    FONT-FAMILY: Verdana, Tahoma
+}
+.Texto
+{
+    PADDING-RIGHT: 5px;
+    PADDING-LEFT: 5px;
+    FONT-SIZE: 11px;
+    color: navy;
+    FONT-FAMILY: Verdana, Tahoma;
+    WIDTH: 170px;
+    height: 20px;
+}
+
+.TextoDes {
+    PADDING-RIGHT: 5px;
+    PADDING-LEFT: 5px;
+    FONT-SIZE: 11px;
+    color: gray;
+    FONT-FAMILY: Verdana, Tahoma;
+     WIDTH: 170px;
+    height: 20px;
+}
+
+.visible  
+{ display: none; 
+
+}
+.red 
+{ 
+    margin-left: 10px;
+    color: #ff0000; 
+    FONT-SIZE: 11px;
+    FONT-FAMILY: Verdana, Tahoma;
+}
+
+.cabecera {
+    position: relative;
+    float: left;
+    text-align:left;
+    padding: 30px;
+    border: 0px solid #999999; 
+    width: 39%;
+    FONT-SIZE: 16px;
+    FONT-FAMILY: Verdana, Tahoma;
+    alignment-adjust: auto;
+}
+
+.etiquetaLarga {
+    text-align: left; 
+    padding-left: 0px;
+    margin: 0px;
+    font-family: Verdana, Tahoma;
+    font-size: 13px;
+    color: red;
+}
+
+/* Media Queries
+--------------------------------------------- */
+
+@media all and (max-width : 768px) {
+
+    header {
+        text-align: center;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    #content {
+        width: 94%;
+        padding: 3%;	
+    }
+
+    #sidebar {
+        width: 94%;
+        padding: 3%;
+        border-top: 3px solid #E64A19;
+    }
+
+}
+
+@media all and (max-width : 330px) {
+
+        nav ul li {
+                display:block;
+                width: 94%;
+        }
+
+}

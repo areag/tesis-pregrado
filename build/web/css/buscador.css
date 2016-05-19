@@ -1,0 +1,98 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16/03/2016, 16:54:16
+    Author     : Guille
+*/
+
+.container {
+
+    height: 100%;
+    max-width: 300px;
+    padding: 0px;;
+    margin: 0px; 
+    overflow: hidden;
+}
+
+#search {
+
+
+}
+
+#search input[type="text"] {
+    background: url(search-white.png) no-repeat 10px 6px #fcfcfc;
+    border: 1px solid #d1d1d1;
+    font: bold 12px Arial,Helvetica,Sans-serif;
+    color: #bebebe;
+    width: 150px;
+    padding: 6px 15px 6px 35px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+}
+
+.ordenar ul li{
+
+    padding: 4px;
+    margin: 0px;
+
+}
+
+.ordenar label{
+    display: block;    
+    padding: 0px;
+    margin: 0px;
+    color: #ffffff;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif; 
+}
+
+.ordenar input{
+    
+}
+
+/* Media Queries
+--------------------------------------------- */
+
+@media all and (max-width : 768px) {
+
+    header {
+        text-align: center;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    #content {
+        width: 94%;
+        padding: 3%;	
+    }
+
+    #sidebar {
+        width: 94%;
+        padding: 3%;
+        border-top: 3px solid #E64A19;
+    }
+
+}
+
+@media all and (max-width : 330px) {
+
+        nav ul li {
+                display:block;
+                width: 94%;
+        }
+
+}
