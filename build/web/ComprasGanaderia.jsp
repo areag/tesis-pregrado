@@ -34,11 +34,11 @@
 
             <form method="post" id="comprasgan" action="ResultadoComprasGanaderia.jsp" name="comprasgan"  class="formularios" target="central"> <br>
 
-                <label for="numerodecompra" class="Texto">Número de Compra: </label>
+                <label for="numerodecompra" class="Texto">Número de compra: </label>
                 <span class="red">*</span>
                 <input type="text" class="ComboMedio" name="nrocompra" id="nrocompra"><br /><br />
 
-                <label for="fecha" class="Texto"> Fecha de venta: </label>
+                <label for="fecha" class="Texto"> Fecha de compra: </label>
                 <span class="red">*</span>
                 <input type="text" class="ComboMedio" name="fecha" id="fecha" readonly="readonly" /><br /><br />
 
