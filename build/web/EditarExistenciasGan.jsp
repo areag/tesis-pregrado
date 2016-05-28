@@ -24,14 +24,17 @@
             desvio = request.getParameter("desvio");
         %>
         
-        <%=desvio%>
+        
         
         <%
             if ("editar".equals(desvio)) {
 
                 ExistenciasGan EG = new ExistenciasGan();
                 EG.setIdExistencias(Integer.parseInt(request.getParameter("idexistenciasgan")));
-                EG.setFecha(request.getParameter("fecha"));
+                EG.setFecha_desde(request.getParameter("fecha_desde"));
+                EG.setFecha_hasta(request.getParameter("fecha_hasta"));
+                EG.setEft(Integer.parseInt(request.getParameter("eft")));
+                EG.setEfn(Integer.parseInt(request.getParameter("efn")));
                 EG.setPorcentaje(Double.parseDouble(request.getParameter("porcentaje")));
                 EG.setPrecio_ternero(Double.parseDouble(request.getParameter("precio_ternero")));
                 EG.setPrecio_novillo(Double.parseDouble(request.getParameter("precio_novillo")));
@@ -43,7 +46,8 @@
                 EG.setMuerte_novillo(Double.parseDouble(request.getParameter("muerte_novillo")));
 
                 System.out.print(EG.getIdExistencias());
-                System.out.print(EG.getFecha());
+                System.out.print(EG.getFecha_desde());
+                System.out.print(EG.getFecha_hasta());
                 System.out.print(EG.getPorcentaje());
                 System.out.print(EG.getPrecio_ternero());
                 System.out.print(EG.getPrecio_novillo());

@@ -31,7 +31,6 @@
                     <option value="VentasGanaderia.jsp">Ventas</option>
                     <option value="ExistenciasGan.jsp"> Existencias</option>                    
                     <option value="GananciaGan.jsp">Ganancia a la Fecha</option>
-                    <option value="ReportesGan.jsp">Reporte Valuación de Existencia, Animales</option>
                     <option>Estado de Resultado Anual</option>
                     <option>Registro Histórico Compra y Venta, Animales</option>
                     <option>Gastos de Producción por Animal</option>

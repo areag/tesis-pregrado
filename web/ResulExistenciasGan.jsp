@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="css/tablas.css">
         <script type="text/javascript" src="js_FunGenericas.js"></script>
         <script type="text/javascript" src="js/js_existenciasgan.js"></script>
-        
+
         <title>Resultado Existencias Ganaderia</title>
 
         <%
@@ -29,38 +29,35 @@
             boolean resultado;
             String r1 = "";
             String r2 = "";
-                                %>
-                                
+            
+          %>
+
         <%
-            ExistenciasGan EG = new ExistenciasGan();
-            String fe = request.getParameter("fecha");
-            String dia = fe.substring(0, 2);
-            String mes = fe.substring(3, 5);
-            String año = fe.substring(6, 10);
-            fe = año + "/" + mes + "/" + dia;
-            EG.setFecha(fe);
-            EG.setPorcentaje(Double.parseDouble(request.getParameter("porcentaje")));
-            EG.setPrecio_ternero(Double.parseDouble(request.getParameter("precio_ternero")));
-            EG.setPrecio_novillo(Double.parseDouble(request.getParameter("precio_novillo")));
-            EG.setIncremento(Double.parseDouble(request.getParameter("incremento")));
-            EG.setDisminucion(Double.parseDouble(request.getParameter("disminucion")));
-            EG.setPeso_ternero(Double.parseDouble(request.getParameter("peso_ternero")));
-            EG.setPeso_novillo(Double.parseDouble(request.getParameter("peso_novillo")));
-            EG.setMuerte_ternero(Double.parseDouble(request.getParameter("muerte_ternero")));
-            EG.setMuerte_novillo(Double.parseDouble(request.getParameter("muerte_novillo")));
-            resultado = eg.guardarExistGan(EG);
-            
-            
-            System.out.print(EG.getFecha());
-            System.out.print(EG.getPorcentaje());
-            System.out.print(EG.getPrecio_ternero());
-            System.out.print(EG.getPrecio_novillo());
-            System.out.print(EG.getIncremento());
-            System.out.print(EG.getDisminucion());
-            System.out.print(EG.getPeso_ternero());
-            System.out.print(EG.getPeso_novillo());
-            System.out.print(EG.getMuerte_ternero());
-            System.out.print(EG.getMuerte_novillo());
+            try {
+                ExistenciasGan EG = new ExistenciasGan();
+                EG.setFecha_desde(request.getParameter("fecha_desde"));
+                String fecha_hasta = request.getParameter("fecha_hasta");
+                String dia = fecha_hasta.substring(0, 2);
+                String mes = fecha_hasta.substring(3, 5);
+                String año = fecha_hasta.substring(6, 10);
+                fecha_hasta = año + "-" + mes + "-" + dia;
+                EG.setFecha_hasta(fecha_hasta);               
+                EG.setPorcentaje(Double.parseDouble(request.getParameter("porcentaje")));
+                EG.setPrecio_ternero(Double.parseDouble(request.getParameter("precio_ternero")));
+                EG.setPrecio_novillo(Double.parseDouble(request.getParameter("precio_novillo")));
+                EG.setIncremento(Double.parseDouble(request.getParameter("incremento")));
+                EG.setDisminucion(Double.parseDouble(request.getParameter("disminucion")));
+                EG.setPeso_ternero(Double.parseDouble(request.getParameter("peso_ternero")));
+                EG.setPeso_novillo(Double.parseDouble(request.getParameter("peso_novillo")));
+                EG.setMuerte_ternero(Double.parseDouble(request.getParameter("muerte_ternero")));
+                EG.setMuerte_novillo(Double.parseDouble(request.getParameter("muerte_novillo")));
+                EG.setEft(EG.nuevo_eft());
+                EG.setEfn(EG.nuevo_efn());
+                resultado = eg.guardarExistGan(EG);
+
+            } catch (Exception e) {
+                out.print("Ocurrio una excepcion: " + e.getMessage());
+            }
 
             if (resultado == true) {
                 r1 = "alert('Existencias Cargadas Exitosamente!!!!!')";
@@ -80,7 +77,7 @@
         </script> 
 
     </head>
-     <%} else {
+    <%} else {
     %>
     <body>
 
@@ -96,8 +93,11 @@
                 <table>
                     <thead>    
                         <tr>
-                            <th>Numero</th>
-                            <th>Fecha</th>
+                            <th>Número</th>
+                            <th>Desde</th>
+                            <th>Hasta</th>
+                            <th>EFT</th>
+                            <th>EFN</th>
                             <th>Porcentaje</th>
                             <th>Precio Ternero al Cierre</th>
                             <th>Precio Novillo al Cierre</th>
@@ -107,8 +107,9 @@
                             <th>Peso Promedio Novillo</th>
                             <th>Muertes Ternero</th>
                             <th>Muertes Novillo</th>
-                            <th>Modificar</th>
-                            <th>Eliminar</th>
+                            <th>Modificar Existencia</th>
+                            <th>Generar Reporte</th>
+                            <th>Eliminar Existencia</th>
 
 
                         </tr>
@@ -116,13 +117,16 @@
                     <tbody>
 
                         <%
-                            SQL sql = new SQL();
+                            SQL sql = new SQL();                                                     
                             sql.conexion("root", "root");
-                            ResultSet rs = sql.consultar("SELECT * FROM existenciasgan order by fecha desc; ");
-                            while (rs.next()) {
+                            ResultSet rs = sql.consultar("SELECT * FROM existenciasgan order by fecha_hasta desc; ");
+                            while (rs.next()) {                                
                                 out.print("<tr>");
                                 out.print("<td>" + rs.getInt("idexistenciasgan") + "</td>");
-                                out.print("<td>" + rs.getString("fecha") + "</td>");
+                                out.print("<td>" + rs.getString("fecha_desde") + "</td>");
+                                out.print("<td>" + rs.getString("fecha_hasta") + "</td>");
+                                out.print("<td>" + rs.getInt("eft") + "</td>");
+                                out.print("<td>" + rs.getInt("efn") + "</td>");
                                 out.print("<td>" + rs.getDouble("porcentaje") + "</td>");
                                 out.print("<td>" + rs.getDouble("precio_ternero") + "</td>");
                                 out.print("<td>" + rs.getDouble("precio_novillo") + "</td>");
@@ -132,17 +136,19 @@
                                 out.print("<td>" + rs.getDouble("peso_novillo") + "</td>");
                                 out.print("<td>" + rs.getDouble("muerte_ternero") + "</td>");
                                 out.print("<td>" + rs.getDouble("muerte_novillo") + "</td>");
-                                out.println("<td align=\"center\"> <span class=\"editar\" onclick=\"transformarEnEditable(this)\" style='cursor: pointer'><img src=\"imagenes/editar.png\" title=\"Editar\" alt=\"Editar\"></span>");
+                                out.print("<td align=\"center\"> <span class=\"editar\" onclick=\"transformarEnEditable(this)\" style='cursor: pointer'><img src=\"imagenes/editar.png\" title=\"Editar\" alt=\"Editar\"></span>");
+                                out.print("<td align=\"center\"> <span class=\"editar\" onclick=\"window.open('ReportesGan.jsp?&idexistenciasgan=" + rs.getInt("idexistenciasgan") + "','reportesgan','width=595.28,height=541.89');\" style='cursor: pointer'><img src=\"imagenes/generar_reporte.png\" title=\"Reporte\" alt=\"Reporte\"></span>");                               
                                 out.print("<td><span class=\"editar\" onclick=\"eliminar(this)\"><img src=\"imagenes/eliminar.png\" title=\"Eliminar\" alt=\"Eliminar\" style='cursor: pointer'></span></td>");
                                 out.print("</tr>");
                             }
+                            rs.close();
                         %>
                     </tbody>
                 </table>
             </div>
 
             <form name="formEdicion2" action="EditarExistenciasGan.jsp" method="post" onsubmit="capturarEnvio()" onreset="anular()">
-                
+
                 <div id="contenedorForm" class="container">
 
                 </div>

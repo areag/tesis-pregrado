@@ -15,10 +15,6 @@ function cambia() {
     window.frames.location[3].src = "Buscar.jsp";
 }
 
-
-
-
-
 jQuery(function ($) {
     $.datepicker.regional['es'] = {
         closeText: 'Cerrar',
@@ -48,7 +44,6 @@ $(document).ready(function () {
 $(document).ready(function () {
     $(".fecha_gan").datepicker({showAnim: 'fadeIn'});
 });
-
 
 
 
